@@ -1,0 +1,43 @@
+<div class="news-list-container">
+  <header class="news-header">
+    <h1>Busca Notícias</h1>
+    <div *ngIf="searchTerm" class="search-results-title">
+      Resultados para a pesquisa: "{{ searchTerm }}"
+    </div>
+  </header>
+
+  <div class="content-area">
+    <aside class="Pesquisa">
+      <div class="search-section">
+        <h2>Pesquisar</h2>
+        <app-search-bar (searchSubmitted)="filterPosts($event)"></app-search-bar>
+      </div>
+      <div class="pesquisas-recomendadas">
+        <h2>Pesquisas Recomendadas</h2>
+        <ul>
+          <li><a href="#" (click)="filterPosts('dolorem')">Dolorem</a></li>
+          <li><a href="#" (click)="filterPosts('aspernatur')">Aspernatur</a></li>
+          <li><a href="#" (click)="filterPosts('enim')">Enim</a></li>
+        </ul>
+      </div>
+      <a routerLink="/create" class="add-news-button">Cadastrar Nova Notícia</a>
+    </aside>
+
+    <main class="painel">
+      <div *ngFor="let post of displayedPosts" class="news-card">
+        <div class="card-image">
+          <img src="https://i.pinimg.com/736x/64/bb/c3/64bbc35ea2368e71dada6b6b1707e7dd.jpg" alt="Imagem da Notícia">
+        </div>
+        <div class="card-content">
+          <h3>{{ post.title }}</h3>
+          <p *ngIf="!expandedPosts[post.id]">{{ post.body | slice:0:50 }}...</p>
+          <p *ngIf="expandedPosts[post.id]">{{ post.body }}</p>
+          <button (click)="toggleExpand(post.id)">
+            {{ expandedPosts[post.id] ? 'Ler menos' : 'Ler mais' }}
+          </button>
+        </div>
+      </div>
+      <button *ngIf="hasMoreItems" (click)="loadMore()" class="load-more-button">Ver Mais</button>
+    </main>
+  </div>
+</div>

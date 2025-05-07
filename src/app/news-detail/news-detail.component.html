@@ -1,0 +1,10 @@
+
+<div>
+  <h2>Detalhe da Notícia</h2>
+  <div *ngIf="fullText">
+    <p>{{ fullText }}</p>
+  </div>
+  <div *ngIf="!fullText">
+    <p>Detalhes não encontrados.</p>
+  </div>
+</div>

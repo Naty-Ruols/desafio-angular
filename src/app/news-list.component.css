@@ -1,0 +1,204 @@
+
+h1{
+  font-size: 60px;
+}
+
+
+.painel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Força 3 colunas */
+  gap: 15px;
+  justify-content: center; /* Centraliza a grade */
+}
+
+.news-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex; /* Para organizar o conteúdo interno do card */
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background-color: white;
+  height: 200px;
+  color: black;
+}
+
+.news-card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) ;
+  background-color: rgb(92, 146, 248);
+  color: black;
+}
+
+.card-image {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  margin-bottom: 5px; /* Espaçamento entre a imagem e o texto */
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espaça o conteúdo interno */
+  flex-grow: 1; /* Permite que o conteúdo interno cresça */
+  height: 100%; /* Faz o conteúdo ocupar toda a altura disponível no card */
+}
+
+.card-content h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+  overflow: hidden; /* Esconde o texto que ultrapassa */
+  text-overflow: ellipsis; /* Adiciona "..." para indicar texto cortado */
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Limita linhas */
+  -webkit-box-orient: vertical;
+}
+
+.card-content p {
+  color: black;
+  margin-bottom: 10px;
+  flex-grow: 1;
+  overflow: hidden; /* Esconde o texto que ultrapassa */
+  text-overflow: ellipsis; /* Adiciona "..." para indicar texto cortado */
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limita a quatro linhas */
+  -webkit-box-orient: vertical;
+}
+
+.card-content button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start; /* Alinha o botão à esquerda */
+}
+
+.card-content button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para a barra lateral (se ainda não estiver estilizada) */
+.Pesquisa {
+  width: 300px; /* Largura da barra lateral */
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: black;
+}
+
+
+.add-news-button {
+  display: inline-block; /* Para que ocupe apenas a largura do conteúdo */
+  padding: 10px 20px; /* Espaçamento interno */
+  background-color: #174dff;
+  color: white; /* Cor do texto branco */
+  text-decoration: none; /* Remove o sublinhado padrão de links */
+  border-radius: 5px; /* Bordas arredondadas */
+  border: none; /* Remove a borda padrão */
+  font-size: 1rem; /* Tamanho da fonte */
+  cursor: pointer; /* Muda o cursor ao passar o mouse */
+  margin-top: 20px; /* Espaçamento acima do botão */
+}
+
+.add-news-button:hover {
+  background-color: #151042; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+
+.news-list-container {
+  display: flex;
+  flex-direction: column; /* Coloca o cabeçalho acima do conteúdo principal */
+  align-items: center; /* Centraliza o cabeçalho horizontalmente */
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  color: white;
+}
+
+.content-area {
+  display: flex; /* Coloca a barra lateral ao lado das notícias */
+  gap: 20px; /* Espaçamento entre a barra lateral e as notícias */
+  width: 100%; /* Garante que a área de conteúdo ocupe a largura total */
+}
+
+
+.news-header {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%; /* Garante que o cabeçalho ocupe a largura total */
+}
+
+
+
+.load-more-button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  width: auto; /* Defina uma largura para o botão */
+  grid-column: 2 / 2; /* Faz o botão ocupar todas as colunas da grade */
+}
+
+.load-more-button:hover {
+  background-color: #0056b3;
+}
+
+.pesquisas-recomendadas ul {
+  list-style: none; /* Remove as bolinhas da lista */
+  padding: 0; /* Remove o padding padrão da lista */
+}
+
+.pesquisas-recomendadas li {
+  margin-bottom: 10px; /* Mantém o espaçamento entre os itens */
+}
+
+.pesquisas-recomendadas a {
+  text-decoration: underline;
+  color: gray;
+
+}
+
+.pesquisas-recomendadas a:hover {
+  text-decoration: underline; /* Adiciona uma linha abaixo ao passar o mouse */
+  /* Você pode adicionar outros estilos de hover aqui, se desejar */
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .Noticias {
+    flex-direction: column; /* Empilha em telas menores */
+  }
+
+  .Pesquisa {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .painel {
+    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+  }
+}
+
+
+
+

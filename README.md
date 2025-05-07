@@ -1,59 +1,49 @@
-# DesafioAngular
+# DESAFIO ANGULAR 📍🔥
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
+Este projeto foi desenvolvido como parte do desafio técnico para a vaga de estágio frontend Angular. O objetivo principal era validar conhecimentos em HTML/CSS, Angular e integrações com APIs.
 
-## Development server
+## ✅Etapas Concluídas
 
-To start a local development server, run:
+As seguintes etapas do desafio foram concluídas:
 
-```bash
-ng serve
-```
+- [x] 1ª Etapa: HTML/CSS estático e responsivo 
+- [x] 2ª Etapa: Criação de projeto Angular e listagem dos posts (notícias) consumindo a WebAPI (GET).
+- [x] 3ª Etapa: Criação de página para cadastrar novos posts (notícias) e página de detalhe ("Ler Mais"). (Observação: A funcionalidade "Ler Mais" foi adaptada devido à natureza dos dados da API).
+- [x] Funcionalidade de busca de notícias (filtragem na listagem).
+- [x] Paginação da listagem de notícias ("Ver Mais" para carregar mais itens).
+- [x] Formulário de cadastro de novas notícias (envio via POST para a API).
+- [x] Estilização básica dos componentes para apresentar o layout e a funcionalidade.
+- [x] Responsividade básica para diferentes tamanhos de tela.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## 🔴Observações e Dificuldades
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Durante a integração com a API fornecida (`https://5cf9ae9df26e8c00146cff8d.mockapi.io/api/v1/post`), foi identificado que o endpoint de detalhe (`/post/:id`) não retornava informações distintas para cada post, consistindo principalmente em texto aleatório. Devido a essa limitação, a funcionalidade "Ler Mais" foi implementada para expandir o texto completo do post na mesma tela, ao invés de buscar detalhes adicionais.
 
-```bash
-ng generate component component-name
-```
+Este foi meu primeiro contato prático com o framework Angular, iniciado no dia 05/05/2025 e finalizado no dia 07/05/2025. Dada a restrição de tempo para a conclusão do teste e também a falta de experiência, algumas funcionalidades e a estilização podem não estar totalmente refinadas, mas procurei demonstrar a compreensão dos conceitos e a capacidade de implementar as etapas solicitadas.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🛠️ Tecnologias Utilizadas
 
-```bash
-ng generate --help
-```
+-   Angular (versão utilizada: 19)
+-   TypeScript
+-   HTML
+-   CSS
+-   Angular CLI
+- ChatGPT
+- GEMINI
+- YOUTUBE (tutoriais)
+- Documentação Angular
 
-## Building
+## Link para a API
 
-To build the project run:
+https://5cf9ae9df26e8c00146cff8d.mockapi.io/api/v1/post
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
+## 📸 Preview
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+![preview](https://cdn.prod.website-files.com/62876589ec366575fa309b1e/65d65a2a9abbec35593a1394_Angular%20NES%20Announcement.png)
 
-```bash
-ng test
-```
+## 💡 Autora
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Feito por [@Naty-Ruols](https://github.com/Naty-Ruols)

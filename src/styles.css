@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  background-image: url('https://virtual.ifro.edu.br/vilhena/pluginfile.php/103693/course/overviewfiles/TI.gif'); /* Adicione a URL do seu GIF */
+  background-repeat: repeat; /* Ou no-repeat se quiser que o GIF apareça apenas uma vez */
+  background-size: auto; /* Ou cover para cobrir toda a tela, contain para ajustar */
+  background-attachment: fixed; /* Para manter o GIF fixo durante a rolagem */
+}

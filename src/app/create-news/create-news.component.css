@@ -1,0 +1,50 @@
+h2{
+  color: white;
+  font-size: 50px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  color: red;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
+}
+
+textarea {
+  resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: rgb(51, 92, 168);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.submit-button:hover {
+background-color: #080ce7;
+}
+
+button:disabled {
+  background-color: #ccc;  /*quando o botão esta desabilitado*/
+  color: black;
+  cursor: not-allowed;
+}
+
+
