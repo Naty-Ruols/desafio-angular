@@ -38,6 +38,10 @@ Este foi meu primeiro contato prático com o framework Angular, iniciado no dia 
 
 https://5cf9ae9df26e8c00146cff8d.mockapi.io/api/v1/post
 
+## Local 
+
+http://localhost:4200/
+
 
 
 ## 📸 Preview
