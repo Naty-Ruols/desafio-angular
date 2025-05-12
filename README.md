@@ -63,6 +63,10 @@ e o HMTL juntamnete com o ts nos seus respectivos componentes
 
 https://5cf9ae9df26e8c00146cff8d.mockapi.io/api/v1/post
 
+## Local 
+
+http://localhost:4200/
+
 
 
 ## 📸 Preview
