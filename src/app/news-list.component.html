@@ -24,17 +24,19 @@
     </aside>
 
     <main class="painel">
-      <div *ngFor="let post of displayedPosts" class="news-card">
+      <div *ngFor="let post of displayedPosts; let i = index" class="news-card">
         <div class="card-image">
-          <img src="https://i.pinimg.com/736x/64/bb/c3/64bbc35ea2368e71dada6b6b1707e7dd.jpg" alt="Imagem da Notícia">
+          <img [src]="getImageUrl(i)"  alt="Imagem da Notícia">
         </div>
         <div class="card-content">
           <h3>{{ post.title }}</h3>
-          <p *ngIf="!expandedPosts[post.id]">{{ post.body | slice:0:50 }}...</p>
-          <p *ngIf="expandedPosts[post.id]">{{ post.body }}</p>
-          <button (click)="toggleExpand(post.id)">
-            {{ expandedPosts[post.id] ? 'Ler menos' : 'Ler mais' }}
-          </button>
+          
+         <p *ngIf="!expandedPosts[`${i}-${post.title}`]">{{ post.body | slice:0:50 }}...</p>
+    <div *ngIf="expandedPosts[`${i}-${post.title}`]">
+      <p>{{ post.body }}</p>
+      <button (click)="toggleExpand(i, post.title)">Ler menos</button>
+    </div>
+    <button *ngIf="!expandedPosts[`${i}-${post.title}`]" (click)="toggleExpand(i, post.title)">Ler mais</button>
         </div>
       </div>
       <button *ngIf="hasMoreItems" (click)="loadMore()" class="load-more-button">Ver Mais</button>

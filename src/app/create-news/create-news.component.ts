@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NewsService } from '../news.service'; // Importe o NewsService
-import { Router } from '@angular/router'; // Importe o Router para redirecionamento
+import { NewsService } from '../news.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-news',
@@ -12,26 +12,19 @@ import { Router } from '@angular/router'; // Importe o Router para redirecioname
   styleUrls: ['./create-news.component.css']
 })
 export class CreateNewsComponent {
-  newPost = { title: '', body: '' }; // Objeto para armazenar os dados do formulário
+  newPost = { title: '', body: '' };
+  hasSubmitted = true;
 
   constructor(private newsService: NewsService, private router: Router) {}
 
   onSubmit() {
-    if (this.newPost.title && this.newPost.body) {
-      this.newsService.addPost(this.newPost).subscribe({
-        next: (response) => {
-          console.log('Post cadastrado com sucesso:', response);
-          // Redirecione para a lista de notícias após o cadastro
-          this.router.navigate(['/']);
-        },
-        error: (error) => {
-          console.error('Erro ao cadastrar post:', error);
-          // Exiba uma mensagem de erro para o usuário (opcional)
-        }
-      });
+    this.hasSubmitted = true;
+    if (this.newPost.title && this.newPost.body && this.newPost.body.length >= 10) {
+      console.log('Notícia cadastrada localmente:', this.newPost);
+      this.newsService.addNewPost(this.newPost);
+      this.router.navigate(['/']);
     } else {
-      // Formulário inválido, exibir mensagem para o usuário (opcional)
-      console.log('Formulário inválido. Título e corpo são obrigatórios.');
+      console.log('Formulário inválido. Preencha todos os campos corretamente.');
     }
   }
 }
